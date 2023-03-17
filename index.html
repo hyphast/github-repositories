@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link type="image/x-icon" href="/public/favicon.ico" rel="shortcut icon" />
+    <link type="Image/x-icon" href="/public/favicon.ico" rel="icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Github Repos</title>
+  </head>
+  <body>
+    <div class="app-container">
+      <div class="search">
+        <form name="search" class="search__form">
+          <div class="search__field">
+            <input
+              type="text"
+              name="search"
+              minlength="2"
+              required
+              class="search__field-input"
+              aria-describedby="search-error"
+              placeholder="Search"
+            />
+            <span id="search-error" class="search__field-error"></span>
+          </div>
+          <button name="submitBtn" type="submit" class="search__form-btn">
+            Найти
+          </button>
+        </form>
+      </div>
+      <div id="result" class="result"></div>
+    </div>
+    <script type="module" src="/main.js"></script>
+    <script type="module" src="/validation.js"></script>
+  </body>
+</html>

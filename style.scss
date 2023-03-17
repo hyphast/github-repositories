@@ -1,0 +1,105 @@
+@use './normalize';
+
+@mixin boldText {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 22px;
+}
+
+.app-container {
+  margin: 54px auto;
+  width: 738px;
+}
+
+.search {
+  &__form {
+    display: flex;
+    justify-content: space-between;
+
+    &-btn {
+      width: 110px;
+      height: 50px;
+      cursor: pointer;
+      border: none;
+      border-radius: 7px;
+      background: #2d333b;
+      color: #ffffff;
+      @include boldText;
+
+      &:active {
+        background: #22272e;
+        transform: scale(1.04);
+      }
+      &:disabled {
+        background: #ffffff;
+        border: 1px solid #2d333b;
+        color: #000000;
+      }
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+
+    &-input {
+      width: 545px;
+      height: 55px;
+      font-size: 24px;
+      line-height: 29px;
+      color: #979797;
+      border: 1px solid rgba(214, 214, 214, 1);
+      border-radius: 10px;
+      padding: 9px 23px;
+
+      &:hover {
+        border-color: rgb(166, 162, 162);
+      }
+      &:focus {
+        outline: none;
+        border-color: rgb(96, 95, 95);
+        color: #1e1c1c;
+      }
+    }
+
+    &-error {
+      position: relative;
+      top: 5px;
+      left: 20px;
+      color: red;
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 22px;
+    }
+  }
+}
+
+.result {
+  margin-top: 35px;
+
+  li + li {
+    margin-top: 15px;
+  }
+
+  .repository {
+    &__heading {
+      margin-bottom: 5px;
+      font-size: 25px;
+      font-weight: 700;
+      line-height: 28px;
+    }
+
+    &__id {
+      @include boldText;
+    }
+
+    &__desc {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 20px;
+      letter-spacing: 0.15px;
+      color: rgba(60, 60, 67, 0.6);
+    }
+  }
+}
